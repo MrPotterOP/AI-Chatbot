@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 375px;
+}
+
+:root {
+  --background: #212121;
+  --foreground: #181818;
+
+  --clr-white: #ffffff;
+  --clr-gray: #303030;
+  --clr-red: #ce2539;
+  --clr-green: #25ce39;
+  --clr-yellow: #cece39;
+}
+
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--clr-white);
+}
+
+/* Msg Copy Btn State */
+.copy-button .copy-icon {
+  display: block;
+}
+
+.copy-button .tick-icon {
+  display: none;
+}
+
+.copy-button.copied .copy-icon {
+  display: none;
+}
+
+.copy-button.copied .tick-icon {
+  display: block;
+}
