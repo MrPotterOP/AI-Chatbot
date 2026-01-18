@@ -8,6 +8,7 @@ type Message = {
     _id: string;
     role: "user" | "assistant";
     content: string;
+    createdAt: string;
 };
 
 export function useChatHistory(chatId: string) {

@@ -4,9 +4,10 @@ import { HugeiconsIcon } from '@hugeicons/react';
 import { Copy01Icon, Tick02Icon, AiMagicIcon } from '@hugeicons/core-free-icons';
 
 import Markdown from 'react-markdown';
+import moment from 'moment';
 
 
-export default function Message({ role, message, isStreaming }: { role: string, message: string, isStreaming: boolean }) {
+export default function Message({ role, message, isStreaming, createdAt }: { role: string, message: string, isStreaming: boolean, createdAt: string }) {
 
 
     const handleCopyClick = (message: string, e: React.MouseEvent) => {
@@ -120,7 +121,7 @@ export default function Message({ role, message, isStreaming }: { role: string, 
                 </div>
 
                 <div className="self-end mr-12 flex items-center gap-2 text-sm text-(--clr-white)/80">
-                    <span>12:00 PM</span>
+                    <span>{moment(createdAt).format('hh:mm A')}</span>
                     <button className="cursor-pointer copy-button" onClick={(e) => handleCopyClick(message, e)}>
                         <HugeiconsIcon icon={Copy01Icon} size={14} className="copy-icon" />
                         <HugeiconsIcon icon={Tick02Icon} size={14} className="tick-icon" />
@@ -148,7 +149,7 @@ export default function Message({ role, message, isStreaming }: { role: string, 
                 </div>
 
                 <div className="self-start ml-14 flex flex-row-reverse items-center gap-2 text-sm text-(--clr-white)/80">
-                    <span>12:00 PM</span>
+                    <span>{moment().format('hh:mm A')}</span>
                     <button className="cursor-pointer copy-button" onClick={(e) => handleCopyClick(message, e)}>
                         <HugeiconsIcon icon={Copy01Icon} size={14} className="copy-icon" />
                         <HugeiconsIcon icon={Tick02Icon} size={14} className="tick-icon" />

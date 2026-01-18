@@ -33,6 +33,7 @@ export default function InputBar({ sendPrompt, isLoading, sendMessage }: InputBa
                 _id: new Date().toISOString(),
                 role: "user",
                 content: input,
+                createdAt: new Date().toISOString(),
             },
         ]);
 

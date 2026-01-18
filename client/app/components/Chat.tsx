@@ -8,6 +8,7 @@ interface ChatMessage {
     _id: string;
     content: string;
     role: string;
+    createdAt: string;
 }
 
 export default function Chat({ chatMessages, isLoading, sendPrompt, stream, sendMessage, isStreaming }: { chatMessages: ChatMessage[] | null, isLoading: boolean, sendPrompt: (prompt: string) => void, stream: string, sendMessage: (messages: any) => void, isStreaming: boolean }) {
@@ -54,12 +55,12 @@ export default function Chat({ chatMessages, isLoading, sendPrompt, stream, send
                 }
                 {
                     !isLoading && chatMessages?.map((message: ChatMessage) => (
-                        <Message key={message._id} role={message.role} message={message.content} isStreaming={false} />
+                        <Message key={message._id} role={message.role} message={message.content} createdAt={message.createdAt} isStreaming={false} />
                     ))
                 }
                 {
                     !isLoading && stream && isStreaming && (
-                        <Message key={Date.now()} role="assistant" message={stream} isStreaming={true} />
+                        <Message key={Date.now()} role="assistant" message={stream} createdAt={Date.now().toString()} isStreaming={true} />
                     )
                 }
 
