@@ -68,7 +68,7 @@ export default function Chat({ chatMessages, isLoading, sendPrompt, stream, send
             </div>
 
             {/* Chat Input */}
-            <InputBar sendPrompt={sendPrompt} isLoading={isLoading} sendMessage={sendMessage} />
+            <InputBar sendPrompt={sendPrompt} isLoading={isStreaming} sendMessage={sendMessage} />
         </section>
     );
 }
