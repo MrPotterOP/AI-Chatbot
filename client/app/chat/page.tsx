@@ -4,6 +4,7 @@ import Chat from "@/app/components/Chat";
 import { useWS } from "@/app/hooks/useWS";
 
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 
 import axios from "axios";
@@ -30,6 +31,7 @@ export default function ChatPage() {
             })
             .catch((error) => {
                 console.error(error);
+                toast.error("Failed to create conversation. Please try again.");
             });
 
 
