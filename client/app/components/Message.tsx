@@ -149,7 +149,7 @@ export default function Message({ role, message, isStreaming, createdAt }: { rol
                 </div>
 
                 <div className="self-start ml-14 flex flex-row-reverse items-center gap-2 text-sm text-(--clr-white)/80">
-                    <span>{moment().format('hh:mm A')}</span>
+                    <span>{moment(createdAt).format('hh:mm A')}</span>
                     <button className="cursor-pointer copy-button" onClick={(e) => handleCopyClick(message, e)}>
                         <HugeiconsIcon icon={Copy01Icon} size={14} className="copy-icon" />
                         <HugeiconsIcon icon={Tick02Icon} size={14} className="tick-icon" />
